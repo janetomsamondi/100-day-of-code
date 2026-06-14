@@ -1,0 +1,45 @@
+Scenario
+
+i am  building a screening tool for a clinical trial.
+The system should determine whether a patient is eligible to participate based on several criteria.
+
+Collect the following information: 
+    Patient age 
+    Gender (M/F) 
+    Weight (kg) 
+    Has Diabetes? (Y/N) 
+    Has Heart Disease? (Y/N) 
+    Pregnant? (Y/N) 
+
+Eligibility Rules 
+Rule 1: Age
+  Patient must be between 18 and 65 years inclusive.
+  If not, immediately display: Not Eligible: Age criteria not met. 
+
+Rule 2: Weight
+  Patient must weigh at least 50 kg.
+  If not: Not Eligible: Weight criteria not met. 
+
+Rule 3: Medical History
+  Patient cannot have both:
+    Diabetes = Y Heart Disease = Y
+  If both are present: Not Eligible: High-risk medical history. 
+
+Rule 4: Pregnancy
+If gender is F and pregnant is Y: Not Eligible: Pregnancy exclusion criterion met. 
+
+Final Decision, If all checks pass: Eligible for Study Enrollment. 
+
+Calculate a risk score:
+  Condition Points Age > 55 +2 
+  Diabetes +3 
+  Heart Disease +4 
+  Weight < 60 kg +2
+
+Then classify:
+  0–2 → Low Risk 
+  3–5 → Moderate Risk 
+  6+ → High Risk
+Display:  Risk Score: 5 Risk Category: Moderate Risk
+
+lastly, calculate comepensation including tranport fee for age>50
